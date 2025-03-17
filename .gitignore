@@ -1,0 +1,22 @@
+# Ignore Node modules
+**/node_modules/
+
+# Ignore Build Directories
+**/dist/
+**/.next/
+
+# Ignore Environment Files
+**/.env
+
+# Logs
+*.log
+
+# OS-specific Files
+.DS_Store
+Thumbs.db
+
+# IDE-specific Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace

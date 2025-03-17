@@ -1,0 +1,22 @@
+[
+  { "username": "AliceJones", "teamId": 1, "profilePictureUrl": "p1.jpeg", "email": "alice@example.com", "password": "password123" },
+  { "username": "BobSmith", "teamId": 2, "profilePictureUrl": "p2.jpeg", "email": "bob@example.com", "password": "password123" },
+  { "username": "CarolWhite", "teamId": 3, "profilePictureUrl": "p3.jpeg", "email": "carol@example.com", "password": "password123" },
+  { "username": "DaveBrown", "teamId": 4, "profilePictureUrl": "p4.jpeg", "email": "dave@example.com", "password": "password123" },
+  { "username": "EveClark", "teamId": 5, "profilePictureUrl": "p5.jpeg", "email": "eve@example.com", "password": "password123" },
+  { "username": "FrankWright", "teamId": 1, "profilePictureUrl": "p6.jpeg", "email": "frank@example.com", "password": "password123" },
+  { "username": "GraceHall", "teamId": 2, "profilePictureUrl": "p7.jpeg", "email": "grace@example.com", "password": "password123" },
+  { "username": "HenryAllen", "teamId": 3, "profilePictureUrl": "p8.jpeg", "email": "henry@example.com", "password": "password123" },
+  { "username": "IdaMartin", "teamId": 4, "profilePictureUrl": "p9.jpeg", "email": "ida@example.com", "password": "password123" },
+  { "username": "JohnDoe", "teamId": 5, "profilePictureUrl": "p10.jpeg", "email": "john@example.com", "password": "password123" },
+  { "username": "LauraAdams", "teamId": 1, "profilePictureUrl": "p11.jpeg", "email": "laura@example.com", "password": "password123" },
+  { "username": "NormanBates", "teamId": 2, "profilePictureUrl": "p12.jpeg", "email": "norman@example.com", "password": "password123" },
+  { "username": "OliviaPace", "teamId": 3, "profilePictureUrl": "p13.jpeg", "email": "olivia@example.com", "password": "password123" },
+  { "username": "PeterQuill", "teamId": 4, "profilePictureUrl": "p1.jpeg", "email": "peter@example.com", "password": "password123" },
+  { "username": "QuincyAdams", "teamId": 5, "profilePictureUrl": "p2.jpeg", "email": "quincy@example.com", "password": "password123" },
+  { "username": "RachelGreen", "teamId": 1, "profilePictureUrl": "p3.jpeg", "email": "rachel@example.com", "password": "password123" },
+  { "username": "SteveJobs", "teamId": 2, "profilePictureUrl": "p4.jpeg", "email": "steve@example.com", "password": "password123" },
+  { "username": "TinaFey", "teamId": 3, "profilePictureUrl": "p5.jpeg", "email": "tina@example.com", "password": "password123" },
+  { "username": "UrsulaMonroe", "teamId": 4, "profilePictureUrl": "p6.jpeg", "email": "ursula@example.com", "password": "password123" },
+  { "username": "VictorHugo", "teamId": 5, "profilePictureUrl": "p7.jpeg", "email": "victor@example.com", "password": "password123" }
+]
