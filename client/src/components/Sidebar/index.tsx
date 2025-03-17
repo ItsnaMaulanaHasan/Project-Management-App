@@ -12,7 +12,6 @@ import {
   ChevronUp,
   Home,
   Layers3,
-  LockIcon,
   LucideIcon,
   Mail,
   Search,
@@ -64,7 +63,7 @@ const Sidebar = () => {
           {!isUserLoading && user ? (
             <>
               <Image
-                src={`/${user.profilePictureUrl || "default.png"}`}
+                src={`/${user.profilePictureUrl || "logo.png"}`}
                 alt={user.username}
                 width={40}
                 height={40}

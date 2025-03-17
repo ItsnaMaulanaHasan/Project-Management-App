@@ -2,23 +2,29 @@
 "use client";
 
 import { useState } from "react";
-import { useLoginMutation } from "@/state/api";
+import { useRegisterMutation } from "@/state/api";
 import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [register, { isLoading }] = useRegisterMutation();
   const router = useRouter();
-  const [login, { isLoading }] = useLoginMutation();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (password !== confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
     try {
-      const res = await login({ email, password }).unwrap();
-      localStorage.setItem("token", res.token);
-      router.push("/");
+      await register({ username, email, password }).unwrap();
+      router.push("/auth/login");
     } catch (error: any) {
-      alert(error.data?.message || "Login failed!");
+      alert(error.data?.message || "Registration failed!");
     }
   };
 
@@ -28,9 +34,26 @@ export default function LoginPage() {
         <div className="w-full rounded-lg bg-white shadow sm:max-w-md xl:p-0 dark:border dark:border-gray-700 dark:bg-gray-800">
           <div className="space-y-4 p-6 sm:p-8 md:space-y-6">
             <h1 className="text-xl leading-tight font-bold tracking-tight text-gray-900 md:text-2xl dark:text-white">
-              Sign in to your account
+              Sign up
             </h1>
             <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+              <div>
+                <label
+                  htmlFor="username"
+                  className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Your username
+                </label>
+                <input
+                  type="username"
+                  id="username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  className="focus:ring-primary-600 focus:border-primary-600 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                  placeholder="John Doe"
+                  required
+                />
+              </div>
               <div>
                 <label
                   htmlFor="email"
@@ -65,6 +88,23 @@ export default function LoginPage() {
                   required
                 />
               </div>
+              <div>
+                <label
+                  htmlFor="confirmPassword"
+                  className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Confirm Password
+                </label>
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  className="focus:ring-primary-600 focus:border-primary-600 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                  placeholder="••••••••"
+                  required
+                />
+              </div>
               <button
                 type="submit"
                 disabled={isLoading}
@@ -73,12 +113,12 @@ export default function LoginPage() {
                 {isLoading ? "Logging in..." : "Sign in"}
               </button>
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                Don’t have an account yet?{" "}
+                Already have an account?{" "}
                 <a
-                  href="/auth/register"
+                  href="/auth/login"
                   className="text-primary-600 dark:text-primary-500 font-medium hover:underline"
                 >
-                  Sign up
+                  Sign in
                 </a>
               </p>
             </form>
